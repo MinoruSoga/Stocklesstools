@@ -21,7 +21,11 @@
         <li class="nav-item active">
           <a class="nav-link" href="add_product.php">ASINから商品登録</a>
         </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="user_status.php">ユーザーの状況確認</a>
+        </li>
       </ul>
     </div>
+    <p>Admin</p>
   </nav>
 </header>

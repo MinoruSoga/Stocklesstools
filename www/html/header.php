@@ -20,5 +20,6 @@
         </li>
       </ul>
     </div>
+    <a class="" href="profile.php">プロフィール</a>
   </nav>
 </header>

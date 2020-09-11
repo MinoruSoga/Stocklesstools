@@ -1,0 +1,8 @@
+docker-compose up -d
+
+phpmyadmin接続
+http://0.0.0.0:8888/
+
+root secret 
+「stockless_system」データベース作成
+stockless_sstem.sql　ファイルをインポート

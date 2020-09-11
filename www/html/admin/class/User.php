@@ -41,6 +41,47 @@ class User extends Config{
   //       return $this->conn->error;
   //     }
   // }
+  public function get_user(){
+    $sql = "SELECT * FROM user WHERE auth_status='user' ";
+    // $sql = "SELECT * FROM user";
+    $result = $this->conn->query($sql);
+
+    //initialize an array
+    $rows = array();
+    if($result->num_rows > 0){
+      while($row = $result->fetch_assoc()){
+        $rows[] = $row;
+      }
+      return $rows;
+    }
+    else{
+      return $this->conn->error;
+    }
+  }
+  public function login_from_admin($email, $password){
+    $sql = "SELECT * FROM user WHERE email='$email' AND password='$password'";
+    $result=$this->conn->query($sql);
+    if($result->num_rows > 0){
+      // session_start();
+      // $row=$result->fetch_assoc();
+      // $_SESSION['login_id'] = $row['id'];
+      // if($result){
+          $this->redirect_js("../../index.php");
+      // }
+      // header("Location: index.php");
+      // if($row['permission'] == 'admin'){
+      //   $this->redirect_js("admin/index.php");
+      //   // echo $_SESSION['user_id'];
+      // }
+      // elseif($row['permission'] == 'user'){
+      //   $this->redirect_js('user/index.php');
+      //   // echo $_SESSION['user_id'];
+      // }
+    }
+    else{
+      echo "Invalid Username or Password";
+    }
+  }
 
 
 
